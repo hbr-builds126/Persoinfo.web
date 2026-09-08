@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head> 
+    <title>Persoinfo.web</title>
+
+    <style>
+ body { 
+
+ background-image: url('theme1.jpg');
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+            margin: 0;
+}
+ 
+ body.theme2 {
+    transition: background-image 0.5s ease-in-out;
+    background-image: url('theme2.png');
+}
+ .welcome-section {
+    height: 100vh;
+}
+
+     .welcome{
+        font-family: "Montserrat", sans-serif;
+        color: rgb(191, 189, 189);
+        text-align: center;
+        font-size: 100px;
+        margin-top: 200px; 
+        animation: fadeUp 2s ease forwards;
+        }
+
+        @keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+        @keyframes sideways {
+    from {
+            opacity: 0;
+            transform: translateX(-25px);
+        }
+       
+        to { 
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+     
+     .title { 
+        
+        font-family: "Montserrat", sans-serif;
+        color: rgb(191, 189, 189);
+        text-align: center;
+        font-size: 50px;
+        margin-top: 0px;
+        animation: sideways 3s ease backwards;
+     }
+
+     .introduction {
+        font-family: "Montserrat", sans-serif;
+        color: rgb(191, 189, 189);
+        text-align: center;
+        font-size: 20px;
+        margin-top: 0px;
+        animation: fadeUp 6s ease forwards; 
+     }
+     .welcome-section.remove {
+        transition: opacity 0.5s ease-out;
+        opacity: 0;
+        
+    }
+        
+        .about-section {
+
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+     .mainbox {
+    width: 70%;
+    height: 250px;
+    
+    background-color: rgba(65, 58, 58, 0.7);
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 250px;
+     }
+
+    .mainbox.show {
+    animation: sideways 2s ease forwards; 
+
+}
+.mainbox.expanded {
+
+    width: 95%;
+    height: 600px;
+    transition: width 0.5s ease, height 0.5s ease;
+    text-align: center;     
+
+}
+.mainbox.shrink {
+     width: 70%;
+    height: 250px;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+
+.about-preview {
+    padding: 15px 30px;
+    background-color: rgba(4, 4, 4, 0.442);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+
+    font-family: "Montserrat", sans-serif; 
+    font-size: 18px;
+    color: red;
+    cursor: pointer; 
+    transition: transform 0.25s ease;
+}
+.about-preview:hover {
+    transform: translateY(-5px) translateX(2px);
+}
+.about-preview.removebutton {
+    
+    display: none;
+}
+
+.abouttext {
+    display: none;
+}
+.abouttext.show {
+    display:block;
+ text-align: center;
+font-family: "Montserrat", sans-serif;
+    color: rgb(179, 159, 159);
+    margin-top: 3px;
+    animation: fadeUp 4s ease forwards; 
+}
+.abouttext.show.h1 {
+    color: rgb(226, 18, 18);
+    -webkit-text-stroke: 1px black; 
+    
+}
+.abouttext.show.p { 
+    font-size: 23px;
+    text-shadow: 2px; 
+    -webkit-text-stroke: 0.5px black; 
+    
+}
+.highlighted {
+   
+    font-size: 40px; 
+    color: black; 
+    background-color: transparent;
+     font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace;
+    font-weight: bold;
+    -webkit-text-stroke: 1px rgb(189, 189, 189); 
+     text-shadow: 2px;
+}
+.quote { 
+     font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+.myworksbutton {
+  display:none
+}
+
+.myworksbutton.showbutton {
+    animation: sideways 4s ease forwards; 
+    display: block;
+    background-color: deepskyblue;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:cornsilk;
+    border-color:aliceblue
+}
+.myworksbutton.showbutton:hover {
+    transform: translateY(-5px);
+    cursor: pointer; 
+}
+
+.firstsectionbackbutton {
+    display:none;
+    position: absolute; 
+    top:15px;
+    left: 15px; 
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: grey;
+    border-radius: 5px; 
+    border-color: black
+}
+.firstsectionbackbutton.showbackbutton {
+    display:block
+}
+
+        
+    </style>
+
+
+</head>
+
+<body>
+
+<section class="welcome-section">
+
+    <h1 class="welcome">Welcome to</h1> 
+    <h2 class="title"> Persoinfo.web</h2>
+    <p class="introduction">This is a simple introduction webpage of me :)</p>
+
+    </section>
+
+    <section class="about-section">
+        
+            <div class="mainbox">
+
+                <button class="about-preview">Click here to learn more about me!</button>
+
+<div class="abouttext"> 
+                <h1 class="abouttext show h1">About Me!</h1>
+                <p  class="abouttext show p">This is <mark class= "highlighted">HBR</mark>, the person behind this work! <br> 
+                                                                                       <br>
+I am an ordinary student, who likes to do some crazy stuff, for example building a giant project with my tiny little fingers. <br> right now I’m studying in 10th grade, and about choose my subject which is PCM, ( physics chemistry Mathematics) for the later computer science study. <br>I’m kinda obsessed with living a disciplined life, being healthy and being productive.<br> In the previous years I’ve started several different projects related to coding, editing but never completed most of them but now i learned a huge lesson which is, <mark class=quote>“If you started something, finish it, or never start!”</mark> <br>
+I’m preparing myself to go abroad, preparing for a good outstanding application for future abroad universities, i saw this challenge as a huge opportunity so I took it without any hesitation. 
+As I said that I’m obsessed to stay active and healthy, so let me tell you my fitness journey. <br>
+I also said i tried several projects in my previous years, so let me tell you some of them below. <br>
+I am also gonna let you go through my Acedamic journey with my future plans on it. <br>
+All of works are listed below, you can choose whatever you like to know about me :) 
+</p>
+</div>
+
+<button class="myworksbutton">MY Works</button>
+<button class="firstsectionbackbutton"><</button>
+
+    </div>
+        
+                
+    </section>
+<section class="myworkssection"> 
+    
+    
+
+
+</section>
+    
+
+    <script>
+    const box =document.querySelector('.mainbox');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                box.classList.add('show'); 
+            }
+        })
+    })
+    observer.observe(box);
+
+    const button =document.querySelector('.about-preview');
+    const backbutton =document.querySelector('.firstsectionbackbutton')
+    const firstsection =document.querySelector('.welcome-section');
+    const abouttext =document.querySelector('.abouttext')
+    const myworksbutton =document.querySelector('.myworksbutton')
+
+
+    button.addEventListener('click', () => {
+        if (!box.classList.contains('expanded')) {
+            box.classList.add('expanded');
+            button.classList.add('removebutton');
+            document.body.classList.add('theme2');
+            firstsection.classList.add('remove');
+            abouttext.classList.add('show')
+            backbutton.classList.add('showbackbutton')
+             setTimeout(() => {
+myworksbutton.classList.add('showbutton')
+},  6000  )
+        }
+    }); 
+
+    backbutton.addEventListener('click', ()=> {
+     box.classList.remove('expanded');
+     button.classList.remove('removebutton')
+     abouttext.classList.remove('show')
+     backbutton.classList.remove('showbackbutton')
+     myworksbutton.classList.remove('showbutton')
+    })
+    
+    myworksbutton.addEventListener('click', () => { 
+        abouttext.classList.remove('show')
+        myworksbutton.classList.remove('showbutton')
+    })
+
+
+       
+  
+
+    
+           
+    </script>
+    
+</body>
+
+        
+</html>
+
